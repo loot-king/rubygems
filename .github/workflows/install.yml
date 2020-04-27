@@ -22,4 +22,6 @@ jobs:
           bundler: none
       - name: Install rubygems
         run: ruby -Ilib -S rake install
+      - name: bundler man pages were installed by rubygems and are properly picked up by bundler
+        run: bundle install --help | grep -q BUNDLE-INSTALL
     timeout-minutes: 10
